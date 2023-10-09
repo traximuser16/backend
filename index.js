@@ -1,9 +1,10 @@
-const express = require("express")
-const cors = require("cors")
-const dotenv = require("dotenv")
-const cookieParser = require("cookie-parser")
-const userRouter = require("./routes/routes")
-const authRouter = require("./routes/auth-routes")
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+const userRouter = require("./routes/routes");
+const authRouter = require("./routes/auth-routes");
+const productRouter = require("./routes/productsRoute");
 
 dotenv.config();
 
@@ -17,11 +18,13 @@ app.use(cookieParser());
 
 
 app.get("/", (req, res) => {
-    res.send("<h1>Server is Running</h1>")
+    res.send("<h1>Server is Running</h1>");
 })
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/v1", productRouter);
+
 // app.get("/users/:name/:userId", (req, res) => {
 //     try {
 //         if (Object.keys(req.params).length === 1) {

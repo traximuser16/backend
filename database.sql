@@ -12,3 +12,16 @@ CREATE TABLE users (
 SELECT * FROM users;
 
 INSERT INTO users (user_name, user_email, user_password) VALUES ('Bob', 'bob@gmail.com', 'bob');
+
+
+
+-- creating products table
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    p_name VARCHAR(50) NOT NULL,
+    quantity INT NOT NULL,
+    price INT NOT NULL,
+    p_description VARCHAR(200) NOT NULL,
+    p_image VARCHAR(100) NOT NULL
+);
