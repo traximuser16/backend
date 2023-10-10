@@ -5,17 +5,15 @@ const cookieParser = require("cookie-parser");
 const userRouter = require("./routes/routes");
 const authRouter = require("./routes/auth-routes");
 const productRouter = require("./routes/productsRoute");
-
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const corsOption = { credential: true, origin: process.env.URL || "*" }
+const corsOption = { credential: true, origin: process.env.URL || "*" };
 
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(cookieParser());
-
 
 app.get("/", (req, res) => {
     res.send("<h1>Server is Running</h1>");

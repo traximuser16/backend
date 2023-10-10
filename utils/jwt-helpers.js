@@ -8,7 +8,6 @@ function jwtToken({
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: "5m"
     })
-
     const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {
         expiresIn: "10m"
     })

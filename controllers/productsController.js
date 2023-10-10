@@ -29,6 +29,7 @@ const getAllProductController = async (req, res) => {
     try {
         await pool.query(queries.getAllProducts, (err, results) => {
             if (err) throw err.message
+            // console.log(results.rows)
             res.status(200).json(results.rows)
         })
     } catch (error) {
